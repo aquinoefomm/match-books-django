@@ -8,7 +8,7 @@
 <body style="background-color:#a0805f;">
 <div class="container">
         <div>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav style="background-color:#441212;" class="navbar navbar-expand-lg navbar-dark">
                 <a class="navbar-brand" href="#">MatchBooks!</a>
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav mr-auto">
@@ -43,7 +43,7 @@
                 </tr>
               </thead>
               <tbody>
-                {% for livro in livros %}
+                {% for livro in livros_titulo %}
                 <tr>
                   <th scope="row">{{ livro.id }}</th>
                   <td>{{ livro.nome }}</td>
@@ -51,6 +51,7 @@
                   <td>{{ livro.estoque }}</td>
                 </tr>
                 {% endfor %}
+
               </tbody>
             </table>
         </div>

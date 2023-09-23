@@ -8,7 +8,7 @@
 <body style="background-color:#a0805f;">
     <div class="container">
         <div>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav style="background-color:#441212;" class="navbar navbar-expand-lg navbar-dark">
                 <a class="navbar-brand" href="#">MatchBooks!</a>
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav mr-auto">
@@ -28,14 +28,24 @@
         </div>
         <div>
             <h1>BUSCA DE LIVROS</h1>
-            <form method="get" action="{% url 'resultadoBusca' %}">
+            <form method="get" action="{% url 'resultadoBuscaTitulo' %}">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="nome">Título</label>
-                    <input type="search" value="" class="form-control" name="nome" id="nome" autocomplete="off">
+                    <label for="nome">Pesquisa por Título</label>
+                    <input type="search" required value="" class="form-control" name="nome" id="nome" autocomplete="off">
                 </div>
                 <br>
-                <button style="background-color:#513013;" type="submit" class="btn btn-secondary">BUSCAR</button>
+                <button style="background-color:#513013;" type="submit" class="btn btn-secondary">BUSCAR POR TÍTULO</button>
+            </form>
+            <br>
+            <form method="get" action="{% url 'resultadoBuscaAutor' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="nome">Pesquisa por Autor</label>
+                    <input type="search" required value="" class="form-control" name="autor" id="autor" autocomplete="off">
+                </div>
+                <br>
+                <button style="background-color:#513013;" type="submit" class="btn btn-secondary">BUSCAR POR AUTOR</button>
             </form>
             <br>
         </div>
