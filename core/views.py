@@ -32,18 +32,14 @@ def cadastro(request):
 def busca(request):
     return render(request, 'busca.html')
 
-def resultado_busca_titulo(request):
 
+def resultado_busca(request):
     context = {
         'livros_titulo': Livro.objects.filter(nome__icontains=request.GET['nome']),
-    }
-    return render(request, 'resultbuscatitulo.html', context)
-
-
-def resultado_busca_autor(request):
-    context = {
         'livros_autor': Livro.objects.filter(autor__icontains=request.GET['autor'])
     }
-    return render(request, 'resultadobuscaautor.html', context)
+    return render(request, 'resultbusca.html', context)
+
+
 
 

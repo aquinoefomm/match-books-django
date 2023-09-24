@@ -41,6 +41,14 @@
                 </tr>
               </thead>
               <tbody>
+                {% for livro in livros_titulo %}
+                <tr>
+                  <th scope="row">{{ livro.id }}</th>
+                  <td>{{ livro.nome }}</td>
+                  <td>{{ livro.autor }}</td>
+                  <td>{{ livro.estoque }}</td>
+                </tr>
+                {% endfor %}
                 {% for livro in livros_autor %}
                 <tr>
                   <th scope="row">{{ livro.id }}</th>

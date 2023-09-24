@@ -28,24 +28,18 @@
         </div>
         <div>
             <h1>BUSCA DE LIVROS</h1>
-            <form method="get" action="{% url 'resultadoBuscaTitulo' %}">
+            <form method="get" action="{% url 'resultbusca' %}">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="nome">Pesquisa por Título</label>
-                    <input type="search" required value="" class="form-control" name="nome" id="nome" autocomplete="off">
+                    <input type="search" value="Título" placeholder="Título" class="form-control" name="nome" id="nome" autocomplete="off">
                 </div>
-                <br>
-                <button style="background-color:#513013;" type="submit" class="btn btn-secondary">BUSCAR POR TÍTULO</button>
-            </form>
-            <br>
-            <form method="get" action="{% url 'resultadoBuscaAutor' %}">
-                {% csrf_token %}
                 <div class="form-group">
                     <label for="nome">Pesquisa por Autor</label>
-                    <input type="search" required value="" class="form-control" name="autor" id="autor" autocomplete="off">
+                    <input type="search" value="Autor" placeholder="Autor" class="form-control" name="autor" id="autor" autocomplete="off">
                 </div>
                 <br>
-                <button style="background-color:#513013;" type="submit" class="btn btn-secondary">BUSCAR POR AUTOR</button>
+                <button style="background-color:#513013;" type="submit" class="btn btn-secondary">BUSCAR</button>
             </form>
             <br>
         </div>
