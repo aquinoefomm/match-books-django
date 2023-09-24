@@ -32,6 +32,7 @@
         </div>
         <div>
             <table class="table table-striped">
+              <h2>Busca por título:</h2>
               <thead>
                 <tr>
                   <th scope="col">ID</th>
@@ -41,20 +42,33 @@
                 </tr>
               </thead>
               <tbody>
-                {% for livro in livros_titulo %}
+                {% for l in livros_titulo %}
                 <tr>
-                  <th scope="row">{{ livro.id }}</th>
-                  <td>{{ livro.nome }}</td>
-                  <td>{{ livro.autor }}</td>
-                  <td>{{ livro.estoque }}</td>
+                  <th scope="row">{{ l.id }}</th>
+                  <td>{{ l.nome }}</td>
+                  <td>{{ l.autor }}</td>
+                  <td>{{ l.estoque }}</td>
                 </tr>
                 {% endfor %}
-                {% for livro in livros_autor %}
+              </tbody>
+            </table>
+            <table class="table table-striped">
+                <h2>Busca por autor:</h2>
+              <thead>
                 <tr>
-                  <th scope="row">{{ livro.id }}</th>
-                  <td>{{ livro.nome }}</td>
-                  <td>{{ livro.autor }}</td>
-                  <td>{{ livro.estoque }}</td>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Autor</th>
+                  <th scope="col">Estoque</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for l in livros_autor %}
+                <tr>
+                  <th scope="row">{{ l.id }}</th>
+                    <td>{{ l.nome }}</td>
+                    <td>{{ l.autor }}</td>
+                    <td>{{ l.estoque }}</td>
                 </tr>
                 {% endfor %}
               </tbody>
