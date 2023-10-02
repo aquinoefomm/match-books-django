@@ -9,7 +9,6 @@ def index(request):
     context = {
         'livros': Livro.objects.all()
     }
-    print(context['livros'])
     return render(request, 'index.html', context)
 
 
@@ -38,8 +37,6 @@ def resultado_busca(request):
         'livros_titulo': Livro.objects.filter(nome__icontains=request.GET['nome']),
         'livros_autor': Livro.objects.filter(autor__icontains=request.GET['autor'])
     }
-    print(request.GET['nome'])
-    print(request.GET['autor'])
     return render(request, 'resultbusca.html', context)
 
 
